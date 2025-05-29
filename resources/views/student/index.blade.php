@@ -6,8 +6,8 @@
 
 @section('content')
     <div class="pt-24 px-10 md:px-0">
-        <p class="md:ml-40 flex m-auto font-bold text-2xl">Halo {{ Auth::user()->name }}, Selamat Datang!</p>
-        <h1 class="text-center text-2xl font-bold py-4">Data Absen Anda</h1>
+        <p class="md:ml-40 flex m-auto font-bold md:text-2xl">Halo {{ Auth::user()->name }}, Selamat Datang!</p>
+        <h1 class="text-center text-xl md:text-2xl font-bold py-4">Data Absen Anda</h1>
         <div class="overflow-x-auto md:w-2/3 md:p-0 m-auto rounded border border-gray-300 shadow-sm">
             <table class="min-w-full divide-y-2 divide-gray-200">
                 <thead class="ltr:text-left rtl:text-right">

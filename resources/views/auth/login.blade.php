@@ -4,7 +4,7 @@
 @section('content')
     @if ($errors->any() || session('failed'))
         <div class="fixed z-10 top-4 right-4">
-            <div class="flex items-start w-full gap-4 px-4 py-3 text-sm text-pink-500 border border-pink-100 rounded bg-pink-50"
+            <div class="flex items-start w-full gap-4 px-4 py-3 text-sm text-red-600 border border-red-100 rounded bg-red-100/50"
                 role="alert">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="1.5" role="graphics-symbol" aria-labelledby="title-09 desc-09">
@@ -30,8 +30,10 @@
         </div>
     @endif
 
-    <div class="h-screen flex justify-center items-center bg-gray-100">
-        <div class="w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md">
+    <div class="h-screen flex justify-center items-center bg-gray-100 p-5 md:p-0">
+        <div class="w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md @if ($errors->any() || session('failed'))
+            ring-2 ring-red-600 shadow-red-400 shadow-xl            
+        @endif">
             <div class="px-6 py-4">
                 <h3 class="mt-3 text-xl font-medium text-center text-gray-600">Selamat Datang</h3>
 
@@ -51,9 +53,9 @@
                             type="password" placeholder="Password" name="password" required />
                     </div>
 
-                    <div class="flex items-center justify-between mt-4">
-                        <a href="#" class="text-sm text-black hover:text-gray-500">Forget
-                            Password?</a>
+                    <div class="flex items-center justify-end mt-4">
+                        {{-- <a href="#" class="text-sm text-black hover:text-gray-500">Forget
+                            Password?</a> --}}
 
                         <button
                             class="px-6 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50 cursor-pointer">
@@ -62,13 +64,13 @@
                     </div>
                 </form>
             </div>
-            <hr class="text-gray-500">
+            {{-- <hr class="text-gray-500">
             <div class="flex items-center justify-center py-4 text-center bg-gray-50">
                 <span class="text-sm text-black">Don't have an account? </span>
 
                 <a href="#"
                     class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">Register</a>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection
